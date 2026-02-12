@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
             `
         })
-
+ 
         loadingCategoriesContainer.innerHTML = html1;
 
         try {
