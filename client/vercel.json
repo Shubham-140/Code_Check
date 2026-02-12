@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    { "source": "/about", "destination": "/pages/about.html" },
+    { "source": "/contact", "destination": "/pages/contact.html" },
+    { "source": "/faq", "destination": "/pages/faq.html" },
+    { "source": "/login", "destination": "/pages/login.html" },
+    { "source": "/register", "destination": "/pages/register.html" },
+    { "source": "/profile", "destination": "/pages/profile.html" },
+    { "source": "/quiz", "destination": "/pages/quiz.html" },
+    { "source": "/result", "destination": "/pages/result.html" },
+    { "source": "/review", "destination": "/pages/review.html" },
+    { "source": "/rules", "destination": "/pages/rules.html" },
+    { "source": "/settings", "destination": "/pages/settings.html" },
+    { "source": "/policy", "destination": "/pages/policy.html" }
+  ]
+}
