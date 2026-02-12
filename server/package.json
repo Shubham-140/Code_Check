@@ -1,0 +1,26 @@
+{
+  "name": "code_check-backend",
+  "version": "1.0.0",
+  "description": "This is a backend servive for Quiz App",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon ./index.js"
+  },
+  "keywords": [
+    "javascript",
+    "node.js",
+    "backend"
+  ],
+  "author": "Shubham Singh",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.4",
+    "nodemon": "^3.1.11"
+  }
+}

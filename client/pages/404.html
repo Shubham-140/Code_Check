@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - CodeCheck</title>
+    <link rel="stylesheet" href="../output.css">
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen hidden" id="main-content">
+    <div id="navbar"></div>
+    <main class="max-w-2xl mx-auto px-4 sm:px-6 py-20">
+        <!-- 404 Container -->
+        <div class="text-center">
+            <!-- 404 Number -->
+            <div class="mb-8">
+                <div class="text-9xl font-bold text-gray-300 dark:text-gray-700">404</div>
+                <div class="text-6xl font-bold text-gray-900 dark:text-white -mt-12">404</div>
+            </div>
+
+            <!-- Message -->
+            <div class="mb-10">
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Page Not Found</h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    Oops! The quiz page you're looking for seems to have bugged out.
+                </p>
+            </div>
+
+            <!-- Code Illustration -->
+            <div class="bg-gray-900 rounded-xl p-6 mb-10 font-mono text-left">
+                <div class="text-green-400 mb-2">// Error: Page not found</div>
+                <div class="text-gray-400 mb-2">if (page.exists()) {</div>
+                <div class="text-yellow-300 ml-4 mb-2">return page.render();</div>
+                <div class="text-gray-400 mb-2">} else {</div>
+                <div class="text-red-400 ml-4">throw new Error("404 - Page not found");</div>
+                <div class="text-gray-400">}</div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto">
+                <a href="home.html" class="px-6 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700">
+                    Back to Home
+                </a>
+                <a href="contact.html"
+                    class="px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-bold rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800">
+                    Report Issue
+                </a>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+                <p class="text-gray-600 dark:text-gray-400 mb-4">Try one of these pages instead:</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="home.html"
+                        class="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600">
+                        Home
+                    </a>
+                    <a href="rules.html"
+                        class="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600">
+                        Rules
+                    </a>
+                    <a href="policy.html"
+                        class="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600">
+                        Policy
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="footer"></div>
+</body>
+
+</html>
+
+<script>
+    const mainContent = document.getElementById('main-content');
+
+    if (document.referrer === '' || document.referrer === window.location.href) {
+        window.location.replace('home.html');
+    }
+    else {
+        mainContent.classList.remove('hidden');
+    }
+</script>
+
+<script type="module" src="../js/load-components.js"></script>
+<script src="../js/common.js"></script>

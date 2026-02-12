@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Quiz - CodeCheck</title>
+    <link rel="stylesheet" href="../output.css">
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+    <script>
+        if (!localStorage.getItem('jwt_token')) {
+            window.location.replace('home.html');
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <div id="navbar"></div>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Quiz Review</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400">Review your answers from the JavaScript Quiz</p>
+        </div>
+
+        <!-- Questions Container -->
+        <div class="space-y-8" id="question-container">
+            <!-- Question 1 -->
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+                <!-- Question Header -->
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-5">
+                    <div class="flex items-center text-white">
+                        <div class="h-10 w-10 rounded-full bg-white/20 flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold">Q1</span>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold">Which method adds element to end of array?</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question Body -->
+                <div class="p-6">
+                    <!-- Code Snippet -->
+                    <div
+                        class="mb-6 bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                        <pre class="text-gray-800 dark:text-gray-300 font-mono text-lg overflow-x-auto">
+const numbers = [1, 2, 3];
+// Add number 4 to the end
+numbers.???;
+console.log(numbers); // [1, 2, 3, 4]
+                        </pre>
+                    </div>
+
+                    <!-- Options -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Option A (Correct & User's Answer) -->
+                        <div
+                            class="flex items-center p-5 border-2 border-green-500 dark:border-green-500 bg-green-50 dark:bg-green-900/20 rounded-xl">
+                            <div
+                                class="h-10 w-10 rounded-lg bg-green-100 dark:bg-green-800 flex items-center justify-center mr-4">
+                                <span class="font-bold text-green-700 dark:text-green-300">A</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-gray-900 dark:text-white">push() - Adds one or more elements to the end
+                                    of an array</div>
+                            </div>
+                        </div>
+
+                        <!-- Option B -->
+                        <div class="flex items-center p-5 border-2 border-gray-200 dark:border-gray-700 rounded-xl">
+                            <div
+                                class="h-10 w-10 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-4">
+                                <span class="font-bold text-gray-700 dark:text-gray-300">B</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-gray-900 dark:text-white">append() - Not a standard JavaScript array
+                                    method</div>
+                            </div>
+                        </div>
+
+                        <!-- Option C -->
+                        <div class="flex items-center p-5 border-2 border-gray-200 dark:border-gray-700 rounded-xl">
+                            <div
+                                class="h-10 w-10 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-4">
+                                <span class="font-bold text-gray-700 dark:text-gray-300">C</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-gray-900 dark:text-white">addToEnd() - Not a valid JavaScript array
+                                    method</div>
+                            </div>
+                        </div>
+
+                        <!-- Option D -->
+                        <div class="flex items-center p-5 border-2 border-gray-200 dark:border-gray-700 rounded-xl">
+                            <div
+                                class="h-10 w-10 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-4">
+                                <span class="font-bold text-gray-700 dark:text-gray-300">D</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-gray-900 dark:text-white">concat() - Returns a new array by merging
+                                    existing arrays</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 (Example of wrong answer) -->
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+                <!-- Question Header -->
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-5">
+                    <div class="flex items-center text-white">
+                        <div class="h-10 w-10 rounded-full bg-white/20 flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold">Q2</span>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold">Which keyword declares a constant in JavaScript?</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question Body -->
+                <div class="p-6">
+                    <!-- Options -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Option A (Correct Answer) -->
+                        <div
+                            class="flex items-center p-5 border-2 border-green-500 dark:border-green-500 bg-green-50 dark:bg-green-900/20 rounded-xl">
+                            <div
+                                class="h-10 w-10 rounded-lg bg-green-100 dark:bg-green-800 flex items-center justify-center mr-4">
+                                <span class="font-bold text-green-700 dark:text-green-300">A</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-gray-900 dark:text-white">const - Declares a block-scoped constant
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Option B -->
+                        <div class="flex items-center p-5 border-2 border-gray-200 dark:border-gray-700 rounded-xl">
+                            <div
+                                class="h-10 w-10 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-4">
+                                <span class="font-bold text-gray-700 dark:text-gray-300">B</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-gray-900 dark:text-white">let - Declares a block-scoped variable</div>
+                            </div>
+                        </div>
+
+                        <!-- Option C (User's Wrong Answer) -->
+                        <div
+                            class="flex items-center p-5 border-2 border-red-500 dark:border-red-500 bg-red-50 dark:bg-red-900/20 rounded-xl">
+                            <div
+                                class="h-10 w-10 rounded-lg bg-red-100 dark:bg-red-800 flex items-center justify-center mr-4">
+                                <span class="font-bold text-red-700 dark:text-red-300">C</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-gray-900 dark:text-white">var - Declares a function-scoped variable
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Option D -->
+                        <div class="flex items-center p-5 border-2 border-gray-200 dark:border-gray-700 rounded-xl">
+                            <div
+                                class="h-10 w-10 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-4">
+                                <span class="font-bold text-gray-700 dark:text-gray-300">D</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-gray-900 dark:text-white">static - Not a variable declaration keyword
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+</body>
+
+</html>
+
+<script type="module" src="../js/load-components.js"></script>
+<script type="module" src="../js/review.js"></script>
+<script src="../js/common.js"></script>
+<script type="module" src="../js/api-service.js"></script>

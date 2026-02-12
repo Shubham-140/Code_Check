@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - CodeCheck</title>
+    <link rel="stylesheet" href="../output.css">
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <div id="navbar"></div>
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Contact Us</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400">
+                Have questions or feedback? Send us a message.
+            </p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+            <form class="space-y-6" novalidate>
+                <!-- Name & Email -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            Your Name
+                        </label>
+                        <input type="text" name="name"
+                            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                            placeholder="Enter your name" required>
+                        <p class="field-error text-red-400 mt-1"></p>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            Your Email
+                        </label>
+                        <input type="email" name="email"
+                            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                            placeholder="you@example.com" required>
+                        <p class="field-error text-red-400 mt-1"></p>
+                    </div>
+                </div>
+
+                <!-- Subject -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        Subject
+                    </label>
+                    <select name="dropdown"
+                        class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                        required>
+                        <option value="">Select Subject</option>
+                        <option value="general-enquiry">General Inquiry</option>
+                        <option value="bug-report">Bug Report</option>
+                        <option value="feature-request">Feature Request</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <p class="field-error text-red-400 mt-1"></p>
+                </div>
+
+                <!-- Message -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        Message
+                    </label>
+                    <textarea rows="5" name="textarea"
+                        class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                        placeholder="How can we help you?" required></textarea>
+                    <p class="field-error text-red-400 mt-1"></p>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg">
+                    Send Message
+                </button>
+            </form>
+
+            <!-- FAQ Link -->
+            <div class="text-center mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                <p class="text-gray-600 dark:text-gray-400">
+                    Learn More?
+                    <a href="faq.html" class="text-blue-600 dark:text-blue-400 font-medium">
+                        Visit FAQ
+                    </a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+</body>
+
+</html>
+
+<script type="module" src="../js/load-components.js"></script>
+<script src="../js/form-validation.js"></script>
+<script src="../js/contact.js"></script>
+<script src="../js/common.js"></script>

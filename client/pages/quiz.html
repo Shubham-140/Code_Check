@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - CodeCheck</title>
+    <link rel="stylesheet" href="../output.css">
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+    <script>
+        if (!localStorage.getItem('jwt_token')) {
+            window.location.replace('home.html');
+        }
+
+        if (document.referrer === "" || document.referrer === window.location.href) {
+            window.location.href = "home.html";
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen" id="main-content">
+    <div id="navbar"></div>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+        <!-- Mobile Layout (sm) -->
+        <div class="block md:hidden">
+            <!-- Quiz Header -->
+            <div class="mb-6">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900 dark:text-white"><span class="topic-name"></span>
+                            Quiz</h1>
+                        <div class="flex items-center text-gray-600 dark:text-gray-400 mt-1">
+                            <span class="mr-3"><span class="font-bold current-question"></span> of <span
+                                    class="total-questions-dom"></span></span>
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs">
+                                <span class="difficulty-dom"></span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="text-right">
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Time</div>
+                        <div class="text-xl font-bold text-blue-600 dark:text-blue-400"><span
+                                class="remaining-time-dom"></span>s</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question Container -->
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden mb-6">
+                <!-- Question Header -->
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-4">
+                    <div class="flex items-center text-white">
+                        <div class="h-8 w-8 rounded-full bg-white/20 flex items-center justify-center mr-3">
+                            <span class="text-lg font-bold">Q<span class="font-bold current-question">1</span></span>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-bold">Multiple Choice</h2>
+                            <p class="text-blue-100 text-xs">Select correct answer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question Body -->
+                <div class="p-4" id="render-questions-container-mobile">
+                    
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex justify-between">
+                <button
+                    class="px-5 py-2.5 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-bold rounded-xl text-sm skip-btn">
+                    Skip
+                </button>
+                <button class="px-5 py-2.5 bg-blue-600 text-white font-bold rounded-xl text-sm next-btn">
+                    Next
+                </button>
+            </div>
+        </div>
+
+        <!-- Tablet Layout (md to lg) -->
+        <div class="hidden md:block lg:hidden">
+            <!-- Quiz Header -->
+            <div class="mb-8">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900 dark:text-white"><span class="topic-name"></span>
+                            Quiz</h1>
+                        <div class="flex items-center text-gray-600 dark:text-gray-400 mt-2">
+                            <span class="mr-4">Question <span class="font-bold current-question"></span> of <span
+                                    class="total-questions-dom"></span></span>
+                            <span
+                                class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
+                                <span class="difficulty-dom"></span> Difficulty
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="text-right">
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Time Left</div>
+                        <div class="text-2xl font-bold text-blue-600 dark:text-blue-400"><span
+                                class="remaining-time-dom"></span>s</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question Container -->
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden mb-6">
+                <!-- Question Header -->
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-5">
+                    <div class="flex items-center text-white">
+                        <div class="h-10 w-10 rounded-full bg-white/20 flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold">Q<span class="font-bold current-question">1</span></span>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold">Multiple Choice Question</h2>
+                            <p class="text-blue-100 text-sm">Select the correct answer from the options below</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question Body -->
+                <div class="p-6" id="render-questions-container">
+
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex justify-between">
+                <button
+                    class="px-8 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-bold rounded-xl skip-btn">
+                    Skip
+                </button>
+                <button class="px-8 py-3 bg-blue-600 text-white font-bold rounded-xl next-btn">
+                    Next
+                </button>
+            </div>
+        </div>
+
+        <!-- Desktop Layout (lg and above) -->
+        <div class="hidden lg:flex gap-6">
+            <!-- Left Sidebar: Quiz Header -->
+            <div class="w-64">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-5 sticky top-6">
+                    <!-- Quiz Header -->
+                    <div class="mb-8">
+                        <h1 class="text-xl font-bold text-gray-900 dark:text-white mb-4"><span
+                                class="topic-name"></span> Quiz</h1>
+
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">Question</div>
+                                <div class="text-2xl font-bold text-gray-900 dark:text-white"><span
+                                        class="font-bold current-question"></span> of <span
+                                        class="total-questions-dom"></span></div>
+                            </div>
+
+                            <div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">Difficulty</div>
+                                <div
+                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium inline-block">
+                                    <span class="difficulty-dom"></span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">Time Left</div>
+                                <div class="text-2xl font-bold text-blue-600 dark:text-blue-400"><span
+                                        class="remaining-time-dom"></span>s</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center: Question Container & Action Buttons -->
+            <div class="flex-1">
+                <!-- Question Container -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden mb-6">
+                    <!-- Question Header -->
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-5">
+                        <div class="flex items-center text-white">
+                            <div class="h-10 w-10 rounded-full bg-white/20 flex items-center justify-center mr-4">
+                                <span class="text-xl font-bold">Q<span
+                                        class="font-bold current-question">1</span></span>
+                            </div>
+                            <div>
+                                <h2 class="text-xl font-bold">Multiple Choice Question</h2>
+                                <p class="text-blue-100 text-sm">Select the correct answer from the options below</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question Body -->
+                    <div class="p-6" id="render-questions-container-desktop">
+                        
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex justify-between">
+                    <button
+                        class="px-8 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-bold rounded-xl skip-btn">
+                        Skip
+                    </button>
+                    <button class="px-8 py-3 bg-blue-600 text-white font-bold rounded-xl next-btn">
+                        Next
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Sidebar: Quiz Status -->
+            <div class="w-64">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-5 sticky top-6">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Quiz Status</h3>
+
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700 dark:text-gray-300">Total</span>
+                            <span class="text-xl font-bold text-blue-600 dark:text-blue-400">10</span>
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700 dark:text-gray-300">Remaining</span>
+                            <span class="text-xl font-bold text-yellow-600 dark:text-yellow-400">9</span>
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700 dark:text-gray-300">Answered</span>
+                            <span class="text-xl font-bold text-purple-600 dark:text-purple-400">0</span>
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700 dark:text-gray-300">Skipped</span>
+                            <span class="text-xl font-bold text-gray-600 dark:text-gray-400">0</span>
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700 dark:text-gray-300">Correct</span>
+                            <span class="text-xl font-bold text-green-600 dark:text-green-400">0</span>
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700 dark:text-gray-300">Incorrect</span>
+                            <span class="text-xl font-bold text-red-600 dark:text-red-400">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+
+<script type="module" src="../js/load-components.js"></script>
+<script type="module" src="../js/quiz.js"></script>
+<script src="../js/common.js"></script>
+<script type="module" src="../js/api-service.js"></script>

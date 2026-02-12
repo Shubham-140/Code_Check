@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - CodeCheck</title>
+    <link rel="stylesheet" href="../output.css">
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/index.css">
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <div id="navbar"></div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Page Header -->
+        <div class="mb-12 text-center">
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">About CodeCheck</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                Master your coding skills through interactive MCQ quizzes designed for coding enthusiast of all levels.
+            </p>
+        </div>
+
+        <!-- Mission & Vision -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+                <div
+                    class="h-14 w-14 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center mb-6">
+                    <span class="text-white text-2xl font-bold">🎯</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Mission</h3>
+                <p class="text-gray-700 dark:text-gray-300">
+                    To provide coders with a platform to test, enhance, and validate their coding knowledge through
+                    carefully crafted multiple-choice questions. We believe in learning by doing, and our quizzes are
+                    designed to reinforce programming concepts practically.
+                </p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+                <div
+                    class="h-14 w-14 rounded-xl bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center mb-6">
+                    <span class="text-white text-2xl font-bold">🚀</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Vision</h3>
+                <p class="text-gray-700 dark:text-gray-300">
+                    To become the go-to platform for coders to assess their coding skills, prepare for technical
+                    interviews, and stay updated with evolving technologies through engaging and challenging MCQ-based
+                    assessments.
+                </p>
+            </div>
+        </div>
+
+        <!-- Coding Categories Section -->
+        <div class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Coding Categories We Cover
+            </h2>
+            <div>
+                <div id="loading-categories" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                </div>
+                <div id="retry-categories" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                </div>
+                <div id="loaded-categories" class="hidden flex gap-6 overflow-x-auto p-4 scrollbar-hide"></div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Why Choose CodeCheck?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div
+                        class="h-12 w-12 rounded-lg bg-blue-100 dark:bg-blue-900 flex items-center justify-center mb-4">
+                        <span class="text-blue-600 dark:text-blue-300 text-xl">📝</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">MCQ-Based Learning</h3>
+                    <p class="text-gray-700 dark:text-gray-300">All quizzes are multiple-choice format, perfect for
+                        quick assessment and learning on the go.</p>
+                </div>
+
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div
+                        class="h-12 w-12 rounded-lg bg-green-100 dark:bg-green-900 flex items-center justify-center mb-4">
+                        <span class="text-green-600 dark:text-green-300 text-xl">🎯</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Category Focused</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Dedicated quizzes for each programming language and
+                        technology stack.</p>
+                </div>
+
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div
+                        class="h-12 w-12 rounded-lg bg-purple-100 dark:bg-purple-900 flex items-center justify-center mb-4">
+                        <span class="text-purple-600 dark:text-purple-300 text-xl">📊</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Progress Tracking</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Monitor your improvement across different coding
+                        categories and difficulty levels.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-xl p-8 mb-12">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center">Our Impact</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div>
+                    <div class="text-4xl font-bold text-white mb-2">500+</div>
+                    <div class="text-blue-100">MCQ Questions</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-white mb-2">20+</div>
+                    <div class="text-blue-100">Coding Categories</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-white mb-2">3</div>
+                    <div class="text-blue-100">Difficulty Levels</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-white mb-2">100%</div>
+                    <div class="text-blue-100">Free Access</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team/Developer Note -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-6 md:mb-0 md:pr-8">
+                    <div
+                        class="h-40 w-40 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 mx-auto flex items-center justify-center">
+                        <span class="text-white text-5xl">👨‍💻</span>
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Built by Developers, for
+                        Coding Enthusiasts</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        CodeCheck is built by a developer who understands the challenges of learning and mastering
+                        programming concepts. Having gone through technical interviews, certification exams, and
+                        continuous learning firsthand, the platform is designed with real learner pain points in mind.
+                    </p>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        The questions are carefully curated to reflect real-world scenarios and commonly asked interview
+                        problems. Whether you're preparing for a job interview, a certification, or simply testing your
+                        knowledge, CodeCheck aims to help you improve with focused, practical practice.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+</body>
+
+</html>
+
+<script type="module" src="../js/load-components.js"></script>
+<script src="../js/about.js"></script>
+<script src="../js/common.js"></script>

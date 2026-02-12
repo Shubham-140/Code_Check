@@ -1,0 +1,112 @@
+<nav class="bg-white dark:bg-gray-800 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-12">
+            <div class="flex items-center">
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" type="button"
+                    class="md:hidden mr-3 -ml-2.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none">
+                    <img src="../assets/hamburger.svg" alt="" class="h-6 w-6 invert">
+                </button>
+
+                <!-- Logo on the left -->
+                <a href="home.html" class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div
+                            class="h-7 w-7 rounded-md bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">C_C</span>
+                        </div>
+                        <span class="ml-2 text-lg font-bold text-gray-900 dark:text-white">CodeCheck</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Navigation links in the middle -->
+            <div class="hidden md:flex items-center justify-center flex-1">
+                <div class="flex space-x-4">
+                    <a href="./home.html"
+                        class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-1.5 rounded-md transition-colors duration-200 text-sm">Home</a>
+                    <a href="./about.html"
+                        class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-1.5 rounded-md transition-colors duration-200 text-sm">About</a>
+                    <a href="./rules.html"
+                        class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-1.5 rounded-md transition-colors duration-200 text-sm">Rules</a>
+                    <a href="./contact.html"
+                        class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-1.5 rounded-md transition-colors duration-200 text-sm">Contact
+                        Us</a>
+                    <a href="./settings.html"
+                        class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium px-3 py-1.5 rounded-md transition-colors duration-200 text-sm">Settings</a>
+                </div>
+            </div>
+
+            <!-- Login button / Profile on the right -->
+            <div class="flex items-center relative" id="profile-container">
+                <button id="login-btn"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg transition-colors duration-200 text-sm hidden"
+                    onclick="window.location.href='login.html'">
+                    Login
+                </button>
+                <button id="profile-btn" aria-label="Profile"
+                    class="hidden w-9 h-9 bg-blue-200 hover:bg-blue-300 rounded-3xl transition-colors duration-200 flex items-center justify-center">
+                    <img src="" alt="" class="w-6 h-6 hidden" />
+                    <span class="text-[25px] text-blue-600 font-bold"></span>
+                </button>
+
+                <!-- Profile Dropdown for Desktop/Tablet -->
+                <div id="profile-dropdown"
+                    class="hidden absolute right-0 top-12 mt-2 w-36 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-50 max-md:!hidden">
+                    <!-- Arrow pointing up -->
+                    <div
+                        class="absolute -top-2 right-3 w-4 h-4 bg-white dark:bg-gray-800 border-l border-t border-gray-200 dark:border-gray-700 transform rotate-45">
+                    </div>
+
+                    <div class="relative">
+                        <a id="navigate-profile-btn"
+                            class="cursor-pointer block px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-lg transition-colors duration-200">
+                            Profile
+                        </a>
+                        <div class="border-t border-gray-200 dark:border-gray-600"></div>
+                        <button
+                            class="logout-button w-full text-left px-4 py-2.5 text-sm text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-lg transition-colors duration-200">
+                            Log Out
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-800 absolute left-0 right-0 shadow-lg z-50">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <p class="px-3 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
+                    Menu</p>
+                <a href="./home.html"
+                    class="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 font-medium block px-3 py-1.5 rounded-md transition-colors duration-200 text-sm">Home</a>
+                <a href="./about.html"
+                    class="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 font-medium block px-3 py-1.5 rounded-md transition-colors duration-200 text-sm">About</a>
+                <a href="./rules.html"
+                    class="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 font-medium block px-3 py-1.5 rounded-md transition-colors duration-200 text-sm">Rules</a>
+                <a href="./contact.html"
+                    class="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 font-medium block px-3 py-1.5 rounded-md transition-colors duration-200 text-sm">Contact
+                    Us</a>
+                <a href="./settings.html"
+                    class="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 font-medium block px-3 py-1.5 rounded-md transition-colors duration-200 text-sm">Settings</a>
+
+                <!-- Account Section for Mobile -->
+                <div class="pt-4 mt-4 border-t border-gray-200 dark:border-gray-700" id="mobile-account-section">
+                    <p
+                        class="px-3 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
+                        Account</p>
+                    <a href="./profile.html"
+                        class="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 font-medium block px-3 py-1.5 rounded-md transition-colors duration-200 text-sm">Profile</a>
+                    <button
+                        class="logout-button w-full text-left text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 font-medium block px-3 py-1.5 rounded-md transition-colors duration-200 text-sm">
+                        Log Out
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script type="module" src="../js/api-service.js"></script>
+<script src="../js/common.js"></script>
+<script type="module" src="../js/navbar.js"></script>

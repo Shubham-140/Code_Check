@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - CodeCheck</title>
+    <link rel="stylesheet" href="../output.css">
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+    <script>
+        if (localStorage.getItem('jwt_token')) {
+            window.location.replace('home.html');
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <div id="navbar"></div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+        <div class="min-h-[70vh] flex items-center justify-center text-center">
+            <div class="max-w-md mx-auto">
+                <div class="text-6xl mb-6">🚧</div>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                    Profile Page Under Construction
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+                    We're working hard to build an amazing profile experience for you.
+                    This page will be available soon with all your stats and achievements!
+                </p>
+                <a href="home.html"
+                    class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-300">
+                    Return to Homepage
+                </a>
+            </div>
+        </div>
+
+        <div class="hidden">
+            <!-- Header -->
+            <div class="text-center mb-10">
+                <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">User's Profile</h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400">Your coding journey and achievements</p>
+            </div>
+
+            <!-- Profile Card -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Left Column: Profile Info -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 sticky top-6">
+                        <!-- Avatar & Name -->
+                        <div class="text-center mb-6">
+                            <div
+                                class="h-32 w-32 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mx-auto mb-4">
+                                <span class="text-5xl text-white">JD</span>
+                            </div>
+                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">John Developer</h2>
+                            <p class="text-gray-600 dark:text-gray-400">@dev_john</p>
+                        </div>
+
+                        <!-- User Level -->
+                        <div
+                            class="text-center mb-6 p-4 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl text-white">
+                            <div class="text-sm mb-1">Current Level</div>
+                            <div class="text-3xl font-bold mb-1">Intermediate</div>
+                            <div class="text-sm">Level 7 Coder</div>
+                        </div>
+
+                        <!-- Streak -->
+                        <div class="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-900 rounded-xl mb-6">
+                            <div>
+                                <div class="text-gray-700 dark:text-gray-300">Learning Streak</div>
+                                <div class="text-2xl font-bold text-gray-900 dark:text-white">14 days</div>
+                            </div>
+                            <div class="text-3xl">🔥</div>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700 dark:text-gray-300">Member Since</span>
+                                <span class="font-bold text-gray-900 dark:text-white">Oct 2023</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700 dark:text-gray-300">Quizzes Taken</span>
+                                <span class="font-bold text-gray-900 dark:text-white">24</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700 dark:text-gray-300">Total Score</span>
+                                <span class="font-bold text-gray-900 dark:text-white">187</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700 dark:text-gray-300">Best Score</span>
+                                <span class="font-bold text-green-600 dark:text-green-400">10/10</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Content -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- Overall Stats -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Overall Performance</h3>
+
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="text-center p-5 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+                                <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">78%</div>
+                                <div class="text-gray-700 dark:text-gray-300">Average Score</div>
+                            </div>
+
+                            <div class="text-center p-5 bg-green-50 dark:bg-green-900/20 rounded-xl">
+                                <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">24</div>
+                                <div class="text-gray-700 dark:text-gray-300">Quizzes Taken</div>
+                            </div>
+
+                            <div class="text-center p-5 bg-purple-50 dark:bg-purple-900/20 rounded-xl">
+                                <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">187</div>
+                                <div class="text-gray-700 dark:text-gray-300">Total Points</div>
+                            </div>
+
+                            <div class="text-center p-5 bg-yellow-50 dark:bg-yellow-900/20 rounded-xl">
+                                <div class="text-3xl font-bold text-yellow-600 dark:text-yellow-400 mb-2">4</div>
+                                <div class="text-gray-700 dark:text-gray-300">Topics Mastered</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Topic Performance -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Topic Performance</h3>
+
+                        <div class="space-y-4">
+                            <!-- JavaScript -->
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700 dark:text-gray-300 font-medium">JavaScript</span>
+                                    <span class="text-gray-700 dark:text-gray-300">85%</span>
+                                </div>
+                                <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-green-500 rounded-full w-85%"></div>
+                                </div>
+                            </div>
+
+                            <!-- C++ -->
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700 dark:text-gray-300 font-medium">C++</span>
+                                    <span class="text-gray-700 dark:text-gray-300">72%</span>
+                                </div>
+                                <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-blue-500 rounded-full w-72%"></div>
+                                </div>
+                            </div>
+
+                            <!-- HTML -->
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700 dark:text-gray-300 font-medium">HTML</span>
+                                    <span class="text-gray-700 dark:text-gray-300">90%</span>
+                                </div>
+                                <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-purple-500 rounded-full w-90%"></div>
+                                </div>
+                            </div>
+
+                            <!-- CSS -->
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700 dark:text-gray-300 font-medium">CSS</span>
+                                    <span class="text-gray-700 dark:text-gray-300">68%</span>
+                                </div>
+                                <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-yellow-500 rounded-full w-68%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Recent Quizzes</h3>
+
+                        <div class="space-y-4">
+                            <!-- Quiz 1 -->
+                            <div
+                                class="flex items-center justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-xl">
+                                <div>
+                                    <div class="font-bold text-gray-900 dark:text-white">JavaScript Advanced</div>
+                                    <div class="text-gray-600 dark:text-gray-400 text-sm">Today • 9/10 • Medium</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-green-600 dark:text-green-400">90%</div>
+                                    <div class="text-gray-600 dark:text-gray-400 text-sm">Score</div>
+                                </div>
+                            </div>
+
+                            <!-- Quiz 2 -->
+                            <div
+                                class="flex items-center justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-xl">
+                                <div>
+                                    <div class="font-bold text-gray-900 dark:text-white">C++ OOP Concepts</div>
+                                    <div class="text-gray-600 dark:text-gray-400 text-sm">Yesterday • 7/10 • Hard</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-blue-600 dark:text-blue-400">70%</div>
+                                    <div class="text-gray-600 dark:text-gray-400 text-sm">Score</div>
+                                </div>
+                            </div>
+
+                            <!-- Quiz 3 -->
+                            <div
+                                class="flex items-center justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-xl">
+                                <div>
+                                    <div class="font-bold text-gray-900 dark:text-white">HTML5 Features</div>
+                                    <div class="text-gray-600 dark:text-gray-400 text-sm">2 days ago • 10/10 • Easy
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-green-600 dark:text-green-400">100%</div>
+                                    <div class="text-gray-600 dark:text-gray-400 text-sm">Score</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+</body>
+
+</html>
+
+<script type="module" src="../js/load-components.js"></script>
+<script src="../js/common.js"></script>

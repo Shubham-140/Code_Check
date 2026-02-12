@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results - CodeCheck</title>
+    <link rel="stylesheet" href="../output.css">
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+    <script>
+        if (!localStorage.getItem('jwt_token')) {
+            window.location.replace('home.html');
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <div id="navbar"></div>
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8">
+        <!-- Results Header -->
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Quiz Completed!</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400">Here's how you performed in the JavaScript Quiz</p>
+        </div>
+
+        <!-- Main Results Card -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden mb-8">
+            <!-- Score Header -->
+            <div class="bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-10 text-center">
+                <div class="text-white mb-4">
+                    <div class="text-6xl font-bold mb-2 correct-answers"></div>
+                    <div class="text-2xl">out of <span id="total-questions"></span></div>
+                </div>
+                <div class="text-blue-100 text-lg">Your Final Score</div>
+            </div>
+
+            <!-- Score Details -->
+            <div class="p-8">
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-10">
+                    <div class="text-center p-6 bg-green-50 dark:bg-green-900/20 rounded-xl">
+                        <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2 correct-answers">7</div>
+                        <div class="text-gray-700 dark:text-gray-300">Correct Answers</div>
+                    </div>
+
+                    <div class="text-center p-6 bg-red-50 dark:bg-red-900/20 rounded-xl">
+                        <div class="text-3xl font-bold text-red-600 dark:text-red-400 mb-2" id="incorrect-answers">2
+                        </div>
+                        <div class="text-gray-700 dark:text-gray-300">Incorrect Answers</div>
+                    </div>
+
+                    <div class="text-center p-6 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+                        <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2" id="skipped-answers">1
+                        </div>
+                        <div class="text-gray-700 dark:text-gray-300">Skipped Questions</div>
+                    </div>
+                </div>
+
+                <!-- Time & Performance -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Time Performance</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700 dark:text-gray-300">Total Time</span>
+                                <span class="font-bold text-gray-900 dark:text-white" id="total-time">⸺</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700 dark:text-gray-300">Average per Question</span>
+                                <span class="font-bold text-gray-900 dark:text-white" id="average-time">⸺</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Quiz Details</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700 dark:text-gray-300">Topic</span>
+                                <span class="font-bold text-gray-900 dark:text-white" id="topic-name">⸺</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700 dark:text-gray-300">Difficulty</span>
+                                <span class="font-bold text-gray-900 dark:text-white" id="topic-difficulty">⸺</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Message -->
+                <div
+                    class="text-center p-6 bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-xl">
+                    <div class="text-2xl font-bold text-gray-900 dark:text-white mb-2" id="feedback-header">
+                        Good Job!</div>
+                    <p class="text-gray-700 dark:text-gray-300" id="feedback-para">You scored above average.
+                        Keep practicing to improve
+                        your JavaScript skills.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <button
+                class="px-6 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-bold rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 text-lg"
+                id="review-btn">
+                Review Answers
+            </button>
+
+            <button class="px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 text-lg"
+                id="retry-btn">
+                Try Another Quiz
+            </button>
+
+            <button
+                class="px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold rounded-xl hover:from-green-600 hover:to-green-700 text-lg"
+                id="share-btn">
+                Share Results
+            </button>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+</body>
+
+</html>
+
+<script type="module" src="../js/load-components.js"></script>
+<script type="module" src="../js/result.js"></script>
+<script src="../js/common.js"></script>

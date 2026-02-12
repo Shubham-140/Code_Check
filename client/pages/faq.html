@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - CodeCheck</title>
+    <link rel="stylesheet" href="../output.css">
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+    <style>
+        /* FAQ Toggle Styles */
+        .faq-toggle {
+            display: none;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-toggle:checked+.faq-question .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-toggle:checked+.faq-question+.faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-arrow {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <div id="navbar"></div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Frequently Asked Questions</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400">Find answers to common questions about CodeCheck</p>
+        </div>
+
+        <!-- FAQ Container -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+            <div class="p-8">
+                <!-- FAQ Items -->
+                <div class="space-y-1">
+                    <!-- Question 1 -->
+                    <div class="border-b border-gray-200 dark:border-gray-700">
+                        <input type="checkbox" id="faq1" class="faq-toggle hidden">
+                        <label for="faq1"
+                            class="faq-question flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                                <span class="text-blue-600 dark:text-blue-400 mr-2">Q.</span>
+                                How is scoring calculated in quizzes?
+                            </h3>
+                            <span class="faq-arrow text-gray-500 dark:text-gray-400 text-2xl">▼</span>
+                        </label>
+                        <div class="faq-answer">
+                            <p class="px-4 pb-4 text-gray-700 dark:text-gray-300">
+                                Each correct answer earns you +1 point. There's no penalty for wrong answers, and
+                                questions can be skipped without point deduction. Your final score is based on correct
+                                answers only.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="border-b border-gray-200 dark:border-gray-700">
+                        <input type="checkbox" id="faq2" class="faq-toggle hidden">
+                        <label for="faq2"
+                            class="faq-question flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                                <span class="text-blue-600 dark:text-blue-400 mr-2">Q.</span>
+                                What coding topics are available?
+                            </h3>
+                            <span class="faq-arrow text-gray-500 dark:text-gray-400 text-2xl">▼</span>
+                        </label>
+                        <div class="faq-answer">
+                            <p class="px-4 pb-4 text-gray-700 dark:text-gray-300">
+                                Currently we offer quizzes in four main categories: JavaScript, C++, HTML, and CSS. Each
+                                category has multiple difficulty levels (Easy, Medium, Hard) with 15-25 questions per
+                                category.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="border-b border-gray-200 dark:border-gray-700">
+                        <input type="checkbox" id="faq3" class="faq-toggle hidden">
+                        <label for="faq3"
+                            class="faq-question flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                                <span class="text-blue-600 dark:text-blue-400 mr-2">Q.</span>
+                                Can I retake quizzes?
+                            </h3>
+                            <span class="faq-arrow text-gray-500 dark:text-gray-400 text-2xl">▼</span>
+                        </label>
+                        <div class="faq-answer">
+                            <p class="px-4 pb-4 text-gray-700 dark:text-gray-300">
+                                Yes, you can retake any quiz as many times as you want. Your profile tracks your best
+                                score, but you can always improve by retaking quizzes to reinforce your learning.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="border-b border-gray-200 dark:border-gray-700">
+                        <input type="checkbox" id="faq4" class="faq-toggle hidden">
+                        <label for="faq4"
+                            class="faq-question flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                                <span class="text-blue-600 dark:text-blue-400 mr-2">Q.</span>
+                                Are there time limits for questions?
+                            </h3>
+                            <span class="faq-arrow text-gray-500 dark:text-gray-400 text-2xl">▼</span>
+                        </label>
+                        <div class="faq-answer">
+                            <p class="px-4 pb-4 text-gray-700 dark:text-gray-300">
+                                You can configure time limits in Settings. Options range from 15 seconds per question to
+                                no time limit. The default is 30 seconds per question for a balanced challenge.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="border-b border-gray-200 dark:border-gray-700">
+                        <input type="checkbox" id="faq5" class="faq-toggle hidden">
+                        <label for="faq5"
+                            class="faq-question flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                                <span class="text-blue-600 dark:text-blue-400 mr-2">Q.</span>
+                                Is CodeCheck completely free?
+                            </h3>
+                            <span class="faq-arrow text-gray-500 dark:text-gray-400 text-2xl">▼</span>
+                        </label>
+                        <div class="faq-answer">
+                            <p class="px-4 pb-4 text-gray-700 dark:text-gray-300">
+                                Yes, CodeCheck is 100% free. We believe in accessible coding education and don't charge
+                                for any features. There are no premium tiers or hidden costs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div>
+                        <input type="checkbox" id="faq6" class="faq-toggle hidden">
+                        <label for="faq6"
+                            class="faq-question flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                                <span class="text-blue-600 dark:text-blue-400 mr-2">Q.</span>
+                                How do I track my progress?
+                            </h3>
+                            <span class="faq-arrow text-gray-500 dark:text-gray-400 text-2xl">▼</span>
+                        </label>
+                        <div class="faq-answer">
+                            <p class="px-4 pb-4 text-gray-700 dark:text-gray-300">
+                                Your profile page shows detailed statistics including average scores, topic performance,
+                                quiz history, and learning streaks. You can monitor your improvement across all coding
+                                topics.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Link -->
+                <div class="text-center mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Question not found?
+                        <a href="contact.html" class="text-blue-600 dark:text-blue-400 font-medium">
+                            Ask us
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+</body>
+
+</html>
+
+<script type="module" src="../js/load-components.js"></script>
+<script src="../js/common.js"></script>
