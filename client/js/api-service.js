@@ -1,4 +1,4 @@
-const base_url = "http://localhost:3000/api/v1";
+const base_url = "https://code-check-backend-dynw.onrender.com/api/v1";
 
 async function request(method, endpoint, body) {
     try {

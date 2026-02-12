@@ -2,13 +2,17 @@ import express from "express";
 const app = express();
 import cors from "cors";
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        "https://code-check-olive.vercel.app",
+        `http://localhost:${process.env.PORT}`
+    ],
+    credentials: true
+}));
 
 app.use(express.json({
     limit: '16kb'
 }))
-
-
 
 import AuthRoute from "./routes/auth.route.js";
 import UserRoute from "./routes/user.route.js";

@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fetchTopics = async () => {
         try {
-            const response = await fetch("http://localhost:3000/api/v1/topic/topics");
+            const response = await fetch("https://code-check-backend-dynw.onrender.com/api/v1/topic/topics");
             if (!response.ok) {
                 throw new Error(`HTTP: ${response.status}`)
             }
