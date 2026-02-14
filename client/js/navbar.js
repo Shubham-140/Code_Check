@@ -46,7 +46,7 @@ const showProfileDropdown = (profileBtn, profileDropdown, e) => {
 const logoutUser = () => {
 
   localStorage.removeItem("jwt_token");
-  window.location.href = "home.html";
+  window.location.href = "/";
 
 }
 

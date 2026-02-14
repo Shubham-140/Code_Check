@@ -94,11 +94,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const navigateToReviewPage = () => {
-        window.location.href = `review.html?quizId=${quizId}`;
+        window.location.href = `/review?quizId=${quizId}`;
     }
 
     const navigateToHomePage = () => {
-        window.location.href = "review.html";
+        window.location.href = "/";
     }
 
     const enableShareResults = () => {

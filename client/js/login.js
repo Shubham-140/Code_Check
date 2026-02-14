@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             successToast("User Authenticated successfully!", "Success")
 
             setTimeout(() => {
-                window.location.href = "home.html";
+                window.location.href = "/";
             }, 3000);
         } catch (error) {
             if (error.message === "Invalid Credentials") {

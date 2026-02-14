@@ -352,7 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.removeItem("jwt_token");
 
             setTimeout(() => {
-                window.location.href = "home.html";
+                window.location.href = "/";
             }, 3000);
         } catch (error) {
             failureToast(`${error.message}`, "Error Occurred");

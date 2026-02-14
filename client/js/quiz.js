@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let selectedCurrentOption = null;
 
     if (!quiz) {
-        window.location.href = "home.html";
+        window.location.href = "/";
     }
 
     function escapeHtml(text) {
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 localStorage.removeItem("current-question");
 
                 setTimeout(() => {
-                    window.location.href = `result.html?quizId=${quiz?.quizId}`;
+                    window.location.href = `/result?quizId=${quiz?.quizId}`;
                 }, 3000);
             } catch (error) {
                 console.error("Something went wrong");

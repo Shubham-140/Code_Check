@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(quiz);
 
             setTimeout(() => {
-                window.location.href = `quiz.html?quizId=${quiz?.quizId}`;
+                window.location.href = `/quiz?quizId=${quiz?.quizId}`;
             }, 3000);
         }
 

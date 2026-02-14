@@ -1,193 +1,296 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="dark">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Settings - CodeCheck</title>
-    <link rel="stylesheet" href="../output.css">
-    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../output.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon.svg"
+      type="image/x-icon"
+    />
     <script>
-        if (!localStorage.getItem('jwt_token')) {
-            window.location.replace('home.html');
-        }
+      if (!localStorage.getItem("jwt_token")) {
+        window.location.replace("/");
+      }
     </script>
-</head>
+  </head>
 
-<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+  <body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
     <div id="navbar"></div>
     <!-- Main Content -->
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <!-- Page Header -->
-        <div class="mb-8 text-center">
-            <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Quiz Settings</h1>
-            <p class="text-gray-600 dark:text-gray-400">Customize your coding quiz experience</p>
-        </div>
+      <!-- Page Header -->
+      <div class="mb-8 text-center">
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+          Quiz Settings
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400">
+          Customize your coding quiz experience
+        </p>
+      </div>
 
-        <!-- Settings Container -->
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden mb-8">
-            <!-- Settings Sections -->
-            <div class="p-6 md:p-8">
-                <!-- Profile Settings -->
-                <div class="mb-10">
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-                        <div
-                            class="h-10 w-10 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center mr-3">
-                            <span class="text-white text-lg">👤</span>
-                        </div>
-                        Profile Settings
-                    </h2>
+      <!-- Settings Container -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden mb-8"
+      >
+        <!-- Settings Sections -->
+        <div class="p-6 md:p-8">
+          <!-- Profile Settings -->
+          <div class="mb-10">
+            <h2
+              class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+            >
+              <div
+                class="h-10 w-10 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center mr-3"
+              >
+                <span class="text-white text-lg">👤</span>
+              </div>
+              Profile Settings
+            </h2>
 
-                    <div class="space-y-8">
-                        <!-- Username Field -->
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-center">
-                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                    Username
-                                </label>
-                                <button class="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline"
-                                    id="edit-username">
-                                    Edit
-                                </button>
-                            </div>
-                            <input type="text"
-                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                                placeholder="Enter your username" id="username" readonly>
+            <div class="space-y-8">
+              <!-- Username Field -->
+              <div class="space-y-4">
+                <div class="flex justify-between items-center">
+                  <label
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                  >
+                    Username
+                  </label>
+                  <button
+                    class="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline"
+                    id="edit-username"
+                  >
+                    Edit
+                  </button>
+                </div>
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                  placeholder="Enter your username"
+                  id="username"
+                  readonly
+                />
 
-                            <!-- Username Action Buttons -->
-                            <div class="hidden flex justify-end space-x-4 pt-2" id="username-action-container">
-                                <button
-                                    class="text-gray-600 dark:text-gray-400 font-medium px-6 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600"
-                                    data-action="cancel-username">
-                                    Cancel
-                                </button>
-                                <button
-                                    class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-2.5 rounded-lg"
-                                    data-action="save-username">
-                                    Save
-                                </button>
-                            </div>
-                        </div>
+                <!-- Username Action Buttons -->
+                <div
+                  class="hidden flex justify-end space-x-4 pt-2"
+                  id="username-action-container"
+                >
+                  <button
+                    class="text-gray-600 dark:text-gray-400 font-medium px-6 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600"
+                    data-action="cancel-username"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-2.5 rounded-lg"
+                    data-action="save-username"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
 
-                        <!-- Full Name Field -->
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-center">
-                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                    Full Name
-                                </label>
-                                <button class="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline"
-                                    id="edit-name">
-                                    Edit
-                                </button>
-                            </div>
-                            <input type="text"
-                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                                placeholder="Enter your full name" readonly id="name" value="">
+              <!-- Full Name Field -->
+              <div class="space-y-4">
+                <div class="flex justify-between items-center">
+                  <label
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                  >
+                    Full Name
+                  </label>
+                  <button
+                    class="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline"
+                    id="edit-name"
+                  >
+                    Edit
+                  </button>
+                </div>
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                  placeholder="Enter your full name"
+                  readonly
+                  id="name"
+                  value=""
+                />
 
-                            <!-- Name Action Buttons -->
-                            <div class="hidden flex justify-end space-x-4 pt-2" id="name-action-container">
-                                <button
-                                    class="text-gray-600 dark:text-gray-400 font-medium px-6 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600"
-                                    data-action="cancel-name">
-                                    Cancel
-                                </button>
-                                <button
-                                    class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-2.5 rounded-lg"
-                                    data-action="save-name">
-                                    Save
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Name Action Buttons -->
+                <div
+                  class="hidden flex justify-end space-x-4 pt-2"
+                  id="name-action-container"
+                >
+                  <button
+                    class="text-gray-600 dark:text-gray-400 font-medium px-6 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600"
+                    data-action="cancel-name"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-2.5 rounded-lg"
+                    data-action="save-name"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quiz Configuration -->
+          <div class="mb-10">
+            <h2
+              class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+            >
+              <div
+                class="h-10 w-10 rounded-lg bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center mr-3"
+              >
+                <span class="text-white text-lg">⚙️</span>
+              </div>
+              Quiz Configuration
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Difficulty Level -->
+              <div>
+                <label
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >Difficulty Level</label
+                >
+                <div class="space-y-4" id="difficulty-container">
+                  <div class="flex items-center">
+                    <input
+                      type="radio"
+                      id="easy"
+                      name="difficulty"
+                      class="h-5 w-5 text-blue-600"
+                      data-level="easy"
+                    />
+                    <label
+                      for="easy"
+                      class="ml-3 text-gray-700 dark:text-gray-300"
+                      >Easy</label
+                    >
+                  </div>
+                  <div class="flex items-center">
+                    <input
+                      type="radio"
+                      id="medium"
+                      name="difficulty"
+                      class="h-5 w-5 text-blue-600"
+                      data-level="medium"
+                    />
+                    <label
+                      for="medium"
+                      class="ml-3 text-gray-700 dark:text-gray-300"
+                      >Medium</label
+                    >
+                  </div>
+                  <div class="flex items-center">
+                    <input
+                      type="radio"
+                      id="hard"
+                      name="difficulty"
+                      class="h-5 w-5 text-blue-600"
+                      data-level="hard"
+                    />
+                    <label
+                      for="hard"
+                      class="ml-3 text-gray-700 dark:text-gray-300"
+                      >Hard</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Questions Count & Time Limit -->
+              <div id="scroll-container">
+                <!-- Questions Count -->
+                <label
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                >
+                  Number of Questions:
+                  <span
+                    class="text-blue-600 dark:text-blue-400"
+                    id="question-count"
+                  ></span>
+                </label>
+                <input
+                  type="range"
+                  min="10"
+                  max="50"
+                  step="5"
+                  class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg mb-1"
+                  data-scroll="question"
+                />
+                <div
+                  class="flex justify-between text-xs text-gray-500 dark:text-gray-400 mb-6"
+                >
+                  <span>10</span>
+                  <span>50</span>
                 </div>
 
-                <!-- Quiz Configuration -->
-                <div class="mb-10">
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-                        <div
-                            class="h-10 w-10 rounded-lg bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center mr-3">
-                            <span class="text-white text-lg">⚙️</span>
-                        </div>
-                        Quiz Configuration
-                    </h2>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Difficulty Level -->
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Difficulty
-                                Level</label>
-                            <div class="space-y-4" id="difficulty-container">
-                                <div class="flex items-center">
-                                    <input type="radio" id="easy" name="difficulty" class="h-5 w-5 text-blue-600"
-                                        data-level="easy">
-                                    <label for="easy" class="ml-3 text-gray-700 dark:text-gray-300">Easy</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="radio" id="medium" name="difficulty" class="h-5 w-5 text-blue-600"
-                                        data-level="medium">
-                                    <label for="medium" class="ml-3 text-gray-700 dark:text-gray-300">Medium</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="radio" id="hard" name="difficulty" class="h-5 w-5 text-blue-600"
-                                        data-level="hard">
-                                    <label for="hard" class="ml-3 text-gray-700 dark:text-gray-300">Hard</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Questions Count & Time Limit -->
-                        <div id="scroll-container">
-                            <!-- Questions Count -->
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                Number of Questions: <span class="text-blue-600 dark:text-blue-400"
-                                    id="question-count"></span>
-                            </label>
-                            <input type="range" min="10" max="50" step="5"
-                                class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg mb-1" data-scroll="question">
-                            <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400 mb-6">
-                                <span>10</span>
-                                <span>50</span>
-                            </div>
-
-                            <!-- Time Limit -->
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                Time per Question: <span class="text-blue-600 dark:text-blue-400"
-                                    id="time-limit"></span>
-                            </label>
-                            <input type="range" min="15" max="60" step="15"
-                                class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg mb-1" data-scroll="time">
-                            <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400">
-                                <span>15s</span>
-                                <span>60s</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Quiz Configuration Action Buttons -->
-                    <div class="flex flex-col md:flex-row justify-between items-center pt-6 mt-6 border-gray-200 dark:border-gray-700"
-                        id="quiz-settings-container">
-                        <button
-                            class="text-gray-600 dark:text-gray-400 font-medium px-6 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 mb-4 md:mb-0"
-                            data-action="reset">
-                            Reset to Defaults
-                        </button>
-
-                        <div class="flex space-x-4">
-                            <button
-                                class="text-gray-600 dark:text-gray-400 font-medium px-6 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600"
-                                data-action="cancel">
-                                Cancel
-                            </button>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-2.5 rounded-lg"
-                                data-action="save">
-                                Save Quiz Settings
-                            </button>
-                        </div>
-                    </div>
+                <!-- Time Limit -->
+                <label
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                >
+                  Time per Question:
+                  <span
+                    class="text-blue-600 dark:text-blue-400"
+                    id="time-limit"
+                  ></span>
+                </label>
+                <input
+                  type="range"
+                  min="15"
+                  max="60"
+                  step="15"
+                  class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg mb-1"
+                  data-scroll="time"
+                />
+                <div
+                  class="flex justify-between text-xs text-gray-500 dark:text-gray-400"
+                >
+                  <span>15s</span>
+                  <span>60s</span>
                 </div>
+              </div>
+            </div>
 
-                <!-- Display & Accessibility -->
-                <!-- <div class="mb-10">
+            <!-- Quiz Configuration Action Buttons -->
+            <div
+              class="flex flex-col md:flex-row justify-between items-center pt-6 mt-6 border-gray-200 dark:border-gray-700"
+              id="quiz-settings-container"
+            >
+              <button
+                class="text-gray-600 dark:text-gray-400 font-medium px-6 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 mb-4 md:mb-0"
+                data-action="reset"
+              >
+                Reset to Defaults
+              </button>
+
+              <div class="flex space-x-4">
+                <button
+                  class="text-gray-600 dark:text-gray-400 font-medium px-6 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600"
+                  data-action="cancel"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-2.5 rounded-lg"
+                  data-action="save"
+                >
+                  Save Quiz Settings
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Display & Accessibility -->
+          <!-- <div class="mb-10">
                     <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
                         <div
                             class="h-10 w-10 rounded-lg bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center mr-3">
@@ -232,47 +335,59 @@
                     </div>
                 </div> -->
 
-                <!-- Account Deletion Section (INSIDE the settings card) -->
-                <div class="pt-10 border-t border-red-200 dark:border-red-900">
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
-                        <div
-                            class="h-10 w-10 rounded-lg bg-red-100 dark:bg-red-900 flex items-center justify-center mr-3">
-                            <span class="text-red-600 dark:text-red-300 text-lg">⚠️</span>
-                        </div>
-                        Dangerous Zone
-                    </h2>
+          <!-- Account Deletion Section (INSIDE the settings card) -->
+          <div class="pt-10 border-t border-red-200 dark:border-red-900">
+            <h2
+              class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+            >
+              <div
+                class="h-10 w-10 rounded-lg bg-red-100 dark:bg-red-900 flex items-center justify-center mr-3"
+              >
+                <span class="text-red-600 dark:text-red-300 text-lg">⚠️</span>
+              </div>
+              Dangerous Zone
+            </h2>
 
-                    <div
-                        class="bg-red-50 dark:bg-red-900/20 rounded-xl p-6 border-2 border-red-200 dark:border-red-800">
-                        <h3 class="text-xl font-bold text-red-700 dark:text-red-300 mb-3">Delete Account</h3>
-                        <p class="text-gray-700 dark:text-gray-300 mb-4">
-                            This action is permanent and cannot be undone. All your quiz history, scores, and account
-                            data will
-                            be permanently deleted.
-                        </p>
+            <div
+              class="bg-red-50 dark:bg-red-900/20 rounded-xl p-6 border-2 border-red-200 dark:border-red-800"
+            >
+              <h3 class="text-xl font-bold text-red-700 dark:text-red-300 mb-3">
+                Delete Account
+              </h3>
+              <p class="text-gray-700 dark:text-gray-300 mb-4">
+                This action is permanent and cannot be undone. All your quiz
+                history, scores, and account data will be permanently deleted.
+              </p>
 
-                        <div class="flex items-center mb-4">
-                            <input type="checkbox" id="confirm-delete-account-checkbox" class="h-5 w-5 text-red-600">
-                            <label for="confirm-delete-account-checkbox" class="ml-3 text-gray-700 dark:text-gray-300">
-                                I understand this action cannot be reversed
-                            </label>
-                        </div>
+              <div class="flex items-center mb-4">
+                <input
+                  type="checkbox"
+                  id="confirm-delete-account-checkbox"
+                  class="h-5 w-5 text-red-600"
+                />
+                <label
+                  for="confirm-delete-account-checkbox"
+                  class="ml-3 text-gray-700 dark:text-gray-300"
+                >
+                  I understand this action cannot be reversed
+                </label>
+              </div>
 
-                        <button
-                            class="w-full px-6 py-3 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed"
-                            disabled id="delete-account-btn">
-                            Delete My Account
-                        </button>
-                    </div>
-                </div>
+              <button
+                class="w-full px-6 py-3 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled
+                id="delete-account-btn"
+              >
+                Delete My Account
+              </button>
             </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <div id="footer"></div>
-
-</body>
-
+  </body>
 </html>
 
 <script type="module" src="../js/api-service.js"></script>

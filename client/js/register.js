@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             successToast("User account created successfully", "Registration completed");
 
             setTimeout(() => {
-                window.location.href="login.html";
+                window.location.href="/login";
             }, 3000);
         } catch (error) {
             failureToast(`${error.message}`, "Something went wrong");  
