@@ -155,3 +155,73 @@ function failureToast(message, title = 'Error') {
         setTimeout(() => toast.remove(), 300);
     }, 3500);
 }
+
+// Inject loader styles once
+(function injectLoaderStyles() {
+    if (document.getElementById('global-loader-styles')) return;
+
+    const style = document.createElement('style');
+    style.id = 'global-loader-styles';
+    style.innerHTML = `
+        @keyframes globalSpin {
+            to { transform: rotate(360deg); }
+        }
+
+        #global-loader {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        #global-loader.show {
+            opacity: 1;
+        }
+
+        #global-loader .spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid rgba(59, 130, 246, 0.2);
+            border-top: 6px solid #3b82f6;
+            border-radius: 50%;
+            animation: globalSpin 0.8s linear infinite;
+        }
+    `;
+
+    document.head.appendChild(style);
+})();
+
+
+function showLoader() {
+    if (document.getElementById('global-loader')) return;
+
+    const loader = document.createElement('div');
+    loader.id = 'global-loader';
+
+    loader.innerHTML = `<div class="spinner"></div>`;
+
+    document.body.appendChild(loader);
+
+    // Trigger fade in
+    requestAnimationFrame(() => {
+        loader.classList.add('show');
+    });
+}
+
+
+function hideLoader() {
+    const loader = document.getElementById('global-loader');
+    if (!loader) return;
+
+    loader.classList.remove('show');
+
+    setTimeout(() => {
+        loader.remove();
+    }, 200);
+}

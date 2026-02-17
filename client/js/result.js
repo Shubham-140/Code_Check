@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const fetchQuizData = async () => {
         try {
+            showLoader();
             const response = await ApiService.get(`/quizAttempt/fetch/${quizId}`);
             if (!response) {
                 return false;
@@ -29,6 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
             return response.data;
         } catch (error) {
             console.error("");
+        }
+        finally {
+            hideLoader();
         }
     }
 

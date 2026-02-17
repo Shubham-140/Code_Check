@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
     <script>
         if (!localStorage.getItem('jwt_token')) {
-            window.location.replace('');
+            window.location.replace('/');
         }
     </script>
 </head>
@@ -28,8 +28,10 @@
             <!-- Score Header -->
             <div class="bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-10 text-center">
                 <div class="text-white mb-4">
-                    <div class="text-6xl font-bold mb-2 correct-answers"></div>
-                    <div class="text-2xl">out of <span id="total-questions"></span></div>
+                    <div class="text-6xl font-bold mb-2 correct-answers">-
+                    </div>
+                    <div class="text-2xl">out of <span id="total-questions">–
+                        </span></div>
                 </div>
                 <div class="text-blue-100 text-lg">Your Final Score</div>
             </div>
@@ -39,18 +41,19 @@
                 <!-- Stats Grid -->
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-10">
                     <div class="text-center p-6 bg-green-50 dark:bg-green-900/20 rounded-xl">
-                        <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2 correct-answers">7</div>
+                        <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2 correct-answers">—
+                        </div>
                         <div class="text-gray-700 dark:text-gray-300">Correct Answers</div>
                     </div>
 
                     <div class="text-center p-6 bg-red-50 dark:bg-red-900/20 rounded-xl">
-                        <div class="text-3xl font-bold text-red-600 dark:text-red-400 mb-2" id="incorrect-answers">2
+                        <div class="text-3xl font-bold text-red-600 dark:text-red-400 mb-2" id="incorrect-answers">—
                         </div>
                         <div class="text-gray-700 dark:text-gray-300">Incorrect Answers</div>
                     </div>
 
                     <div class="text-center p-6 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
-                        <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2" id="skipped-answers">1
+                        <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2" id="skipped-answers">—
                         </div>
                         <div class="text-gray-700 dark:text-gray-300">Skipped Questions</div>
                     </div>

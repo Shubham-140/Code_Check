@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const saveQuiz = async () => {
         try {
+            showLoader();
             const response = await ApiService.post("/quizAttempt/save", { timeTaken: time_limit, quizId: quiz.quizId, answers: attemptedOptions });
 
             if (!response) {
@@ -96,6 +97,10 @@ document.addEventListener("DOMContentLoaded", () => {
             return response.data;
         } catch (error) {
             console.error("");
+        }
+        finally {
+            localStorage.removeItem("quiz");
+            hideLoader();
         }
     }
 
