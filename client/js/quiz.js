@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Mobile HTML
             const mobileHTML = `
         <!-- Question Text -->
-        <div class="mb-6">
+        <div class="mb-6 w-full">
             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">${escapeHtml(firstQues?.description || "")}</h3>
             <div class="${!firstQues?.codeSnippet?.trim() ? "hidden" : ""} bg-gray-50 dark:bg-gray-900 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
                 <pre class="text-gray-800 dark:text-gray-300 font-mono text-sm overflow-x-auto">${escapeHtml(firstQues?.codeSnippet || "")}</pre>
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Tablet HTML
             const tabletHTML = `
         <!-- Question Text -->
-        <div class="mb-8">
+        <div class="mb-8 w-full">
            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">${escapeHtml(firstQues?.description || "")}</h3>
             <div class="${!firstQues?.codeSnippet?.trim() ? "hidden" : ""} bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
                 <pre class="text-gray-800 dark:text-gray-300 font-mono text-lg overflow-x-auto">${escapeHtml(firstQues?.codeSnippet || "")}</pre>
@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Desktop HTML (same as tablet)
             const desktopHTML = `
         <!-- Question Text -->
-        <div class="mb-8">
+        <div class="mb-8 w-full">
            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">${escapeHtml(firstQues?.description || "")}</h3>
             <div class="${!firstQues?.codeSnippet?.trim() ? "hidden" : ""} bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
                 <pre class="text-gray-800 dark:text-gray-300 font-mono text-lg overflow-x-auto">${escapeHtml(firstQues?.codeSnippet || "")}</pre>
