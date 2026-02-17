@@ -170,81 +170,81 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Mobile HTML
             const mobileHTML = `
-            <!-- Question Text -->
-            <div class="mb-6">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">${escapeHtml(firstQues?.description || "")}</h3>
-                <div class="${!firstQues?.codeSnippet?.trim() ? "hidden" : ""} bg-gray-50 dark:bg-gray-900 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
-                    <pre class="text-gray-800 dark:text-gray-300 font-mono text-sm overflow-x-auto">${escapeHtml(firstQues?.codeSnippet || "")}</pre>
-                </div>
+        <!-- Question Text -->
+        <div class="mb-6">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">${escapeHtml(firstQues?.description || "")}</h3>
+            <div class="${!firstQues?.codeSnippet?.trim() ? "hidden" : ""} bg-gray-50 dark:bg-gray-900 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
+                <pre class="text-gray-800 dark:text-gray-300 font-mono text-sm overflow-x-auto">${escapeHtml(firstQues?.codeSnippet || "")}</pre>
             </div>
+        </div>
 
-            <!-- Options (1 per row) -->
-            <div class="space-y-3" id="loaded-options-container-mobile">
-                ${['A', 'B', 'C', 'D'].map((letter, index) => `
-                    <div class="flex items-center p-4 border-2 border-gray-200 dark:border-gray-700 rounded-xl cursor-pointer" data-option="${index}">
-                        <div class="h-8 w-8 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-3">
-                            <span class="font-bold text-gray-700 dark:text-gray-300 text-sm">${letter}</span>
-                        </div>
-                        <div class="flex-1">
-                            <div class="text-gray-900 dark:text-white text-sm">${escapeHtml(firstQues?.options[index])}</div>
-                        </div>
-                        <div class="ml-3 h-5 w-5 rounded-full border-2 border-gray-300 dark:border-gray-600" data-selected="option" data-number="${index}"></div>
+        <!-- Options (1 per row) -->
+        <div class="space-y-3 w-full" id="loaded-options-container-mobile">
+            ${['A', 'B', 'C', 'D'].map((letter, index) => `
+                <div class="flex items-center p-4 border-2 border-gray-200 dark:border-gray-700 rounded-xl cursor-pointer w-full" data-option="${index}">
+                    <div class="h-8 w-8 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-3">
+                        <span class="font-bold text-gray-700 dark:text-gray-300 text-sm">${letter}</span>
                     </div>
-                `).join('')}
-            </div>
-        `;
+                    <div class="flex-1">
+                        <div class="text-gray-900 dark:text-white text-sm">${escapeHtml(firstQues?.options[index])}</div>
+                    </div>
+                    <div class="ml-3 h-5 w-5 rounded-full border-2 border-gray-300 dark:border-gray-600" data-selected="option" data-number="${index}"></div>
+                </div>
+            `).join('')}
+        </div>
+    `;
 
             // Tablet HTML
             const tabletHTML = `
-            <!-- Question Text -->
-            <div class="mb-8">
-               <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">${escapeHtml(firstQues?.description || "")}</h3>
-                <div class="${!firstQues?.codeSnippet?.trim() ? "hidden" : ""} bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                    <pre class="text-gray-800 dark:text-gray-300 font-mono text-lg overflow-x-auto">${escapeHtml(firstQues?.codeSnippet || "")}</pre>
-                </div>
+        <!-- Question Text -->
+        <div class="mb-8">
+           <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">${escapeHtml(firstQues?.description || "")}</h3>
+            <div class="${!firstQues?.codeSnippet?.trim() ? "hidden" : ""} bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                <pre class="text-gray-800 dark:text-gray-300 font-mono text-lg overflow-x-auto">${escapeHtml(firstQues?.codeSnippet || "")}</pre>
             </div>
+        </div>
 
-            <!-- Options (2 per row for tablet) -->
-            <div class="grid grid-cols-2 gap-4" id="loaded-options-container-tablet">
-                ${['A', 'B', 'C', 'D'].map((letter, index) => `
-                    <div class="flex items-center p-5 border-2 border-gray-200 dark:border-gray-700 rounded-xl cursor-pointer" data-option="${index}">
-                        <div class="h-10 w-10 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-4">
-                            <span class="font-bold text-gray-700 dark:text-gray-300">${letter}</span>
-                        </div>
-                        <div class="flex-1">
-                            <div class="text-gray-900 dark:text-white">${escapeHtml(firstQues?.options[index])}</div>
-                        </div>
-                        <div class="ml-4 h-6 w-6 rounded-full border-2 border-gray-300 dark:border-gray-600" data-selected="option" data-number="${index}"></div>
+        <!-- Options (2 per row for tablet) -->
+        <div class="grid grid-cols-2 gap-4 w-full" id="loaded-options-container-tablet">
+            ${['A', 'B', 'C', 'D'].map((letter, index) => `
+                <div class="flex items-center p-5 border-2 border-gray-200 dark:border-gray-700 rounded-xl cursor-pointer" data-option="${index}">
+                    <div class="h-10 w-10 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-4">
+                        <span class="font-bold text-gray-700 dark:text-gray-300">${letter}</span>
                     </div>
-                `).join('')}
-            </div>
-        `;
+                    <div class="flex-1">
+                        <div class="text-gray-900 dark:text-white">${escapeHtml(firstQues?.options[index])}</div>
+                    </div>
+                    <div class="ml-4 h-6 w-6 rounded-full border-2 border-gray-300 dark:border-gray-600" data-selected="option" data-number="${index}"></div>
+                </div>
+            `).join('')}
+        </div>
+    `;
 
             // Desktop HTML (same as tablet)
             const desktopHTML = `
-            <!-- Question Text -->
-            <div class="mb-8">
-               <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">${escapeHtml(firstQues?.description || "")}</h3>
-                <div class="${!firstQues?.codeSnippet?.trim() ? "hidden" : ""} bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                    <pre class="text-gray-800 dark:text-gray-300 font-mono text-lg overflow-x-auto">${escapeHtml(firstQues?.codeSnippet || "")}</pre>
-                </div>
+        <!-- Question Text -->
+        <div class="mb-8">
+           <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">${escapeHtml(firstQues?.description || "")}</h3>
+            <div class="${!firstQues?.codeSnippet?.trim() ? "hidden" : ""} bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                <pre class="text-gray-800 dark:text-gray-300 font-mono text-lg overflow-x-auto">${escapeHtml(firstQues?.codeSnippet || "")}</pre>
             </div>
+        </div>
 
-            <!-- Options (2 per row for desktop) -->
-            <div class="grid grid-cols-2 gap-4" id="loaded-options-container-desktop">
-                ${['A', 'B', 'C', 'D'].map((letter, index) => `
-                    <div class="flex items-center p-5 border-2 border-gray-200 dark:border-gray-700 rounded-xl cursor-pointer" data-option="${index}">
-                        <div class="h-10 w-10 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-4">
-                            <span class="font-bold text-gray-700 dark:text-gray-300">${letter}</span>
-                        </div>
-                        <div class="flex-1">
-                            <div class="text-gray-900 dark:text-white">${escapeHtml(firstQues?.options[index])}</div>
-                        </div>
-                        <div class="ml-4 h-6 w-6 rounded-full border-2 border-gray-300 dark:border-gray-600" data-selected="option" data-number="${index}"></div>
+        <!-- Options (2 per row for desktop) -->
+        <div class="grid grid-cols-2 gap-4 w-full" id="loaded-options-container-desktop">
+            ${['A', 'B', 'C', 'D'].map((letter, index) => `
+                <div class="flex items-center p-5 border-2 border-gray-200 dark:border-gray-700 rounded-xl cursor-pointer" data-option="${index}">
+                    <div class="h-10 w-10 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-4">
+                        <span class="font-bold text-gray-700 dark:text-gray-300">${letter}</span>
                     </div>
-                `).join('')}
-            </div>
-        `;
+                    <div class="flex-1">
+                        <div class="text-gray-900 dark:text-white">${escapeHtml(firstQues?.options[index])}</div>
+                    </div>
+                    <div class="ml-4 h-6 w-6 rounded-full border-2 border-gray-300 dark:border-gray-600" data-selected="option" data-number="${index}"></div>
+                </div>
+            `).join('')}
+        </div>
+    `;
 
             // Render to all three containers
             const mobileContainer = document.getElementById("render-questions-container-mobile");
