@@ -251,9 +251,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const tabletContainer = document.getElementById("render-questions-container");
             const desktopContainer = document.getElementById("render-questions-container-desktop");
 
-            if (mobileContainer) mobileContainer.innerHTML = mobileHTML;
-            if (tabletContainer) tabletContainer.innerHTML = tabletHTML;
-            if (desktopContainer) desktopContainer.innerHTML = desktopHTML;
+            if (mobileContainer) mobileContainer.innerHTML = `<div class="w-full">${mobileHTML}</div>`;
+            if (tabletContainer) tabletContainer.innerHTML = `<div class="w-full">${tabletHTML}</div>`;
+            if (desktopContainer) desktopContainer.innerHTML = `<div class="w-full">${desktopHTML}</div>`;
 
             // Add click listeners to all option containers
             document.getElementById("loaded-options-container-mobile")?.addEventListener("click", showCorrectOption);
