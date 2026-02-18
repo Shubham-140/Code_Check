@@ -12,7 +12,7 @@ const saveQuizAttempt = async (req, res) => {
 
         const quiz = await Quiz.findById(quizId).populate('questions');
 
-        if (!Array.isArray(answers) || answers.length < quiz.questions.length) {
+        if (!Array.isArray(answers)) {
             return res.status(400).json({ error: "Invalid answers format" });
         }
 

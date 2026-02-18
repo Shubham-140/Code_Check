@@ -27,24 +27,48 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentQuestionDOM = document.getElementsByClassName("current-question");
     const remainingTimeDOM = document.querySelectorAll(".remaining-time-dom");
     const difficultyDom = document.getElementsByClassName("difficulty-dom");
-    const totalQuestionsDOM = document.getElementsByClassName("total-questions-dom")
+    const totalQuestionsDOM = document.getElementsByClassName("total-questions-dom");
     const skipBtn = document.querySelectorAll(".skip-btn");
     const nextBtn = document.querySelectorAll(".next-btn");
+
+    // Sidebar status DOMs
+    const statusTotalDOM = document.querySelector(".status-total-dom");
+    const statusRemainingDOM = document.querySelector(".status-remaining-dom");
+    const statusAnsweredDOM = document.querySelector(".status-answered-dom");
+    const statusSkippedDOM = document.querySelector(".status-skipped-dom");
+    const statusCorrectDOM = document.querySelector(".status-correct-dom");
+    const statusIncorrectDOM = document.querySelector(".status-incorrect-dom");
+
     let questions = [];
     let attemptedOptions = [];
     let currentOption = null;
     let timerRef = null;
     let selectedCurrentOption = null;
+    let skippedCount = 0;
+    let answeredCount = 0;
 
     if (!quiz) {
         window.location.href = "/";
     }
+
+    const totalQuestions = quiz?.userSettings?.questionsPerQuiz || 0;
 
     function escapeHtml(text) {
         return text
             .replace(/&/g, "&amp;")
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;");
+    }
+
+    const updateSidebarStatus = () => {
+        const remaining = totalQuestions - (answeredCount + skippedCount);
+        if (statusTotalDOM) statusTotalDOM.textContent = totalQuestions;
+        if (statusRemainingDOM) statusRemainingDOM.textContent = remaining;
+        if (statusAnsweredDOM) statusAnsweredDOM.textContent = answeredCount;
+        if (statusSkippedDOM) statusSkippedDOM.textContent = skippedCount;
+        // Correct and Incorrect are unknown until result, show 0
+        if (statusCorrectDOM) statusCorrectDOM.textContent = 0;
+        if (statusIncorrectDOM) statusIncorrectDOM.textContent = 0;
     }
 
     const updateRemainingTime = () => {
@@ -82,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     for (const elem of totalQuestionsDOM) {
-        elem.textContent = quiz?.userSettings?.questionsPerQuiz;
+        elem.textContent = totalQuestions;
     }
 
     const saveQuiz = async () => {
@@ -113,15 +137,24 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             attemptedOptions.push(currentOption);
+            answeredCount++;
             currentOption = null;
         }
         else if (str === "time-up") {
             attemptedOptions.push(selectedCurrentOption);
+            if (selectedCurrentOption !== null) {
+                answeredCount++;
+            } else {
+                skippedCount++;
+            }
             selectedCurrentOption = null;
         }
         else {
             attemptedOptions.push(null);
+            skippedCount++;
         }
+
+        updateSidebarStatus();
 
         if (currentQuestion >= quiz?.userSettings?.questionsPerQuiz) {
             try {
@@ -220,7 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     `;
 
-            // Desktop HTML (same as tablet)
+            // Desktop HTML
             const desktopHTML = `
         <!-- Question Text -->
         <div class="mb-8 w-full">
@@ -318,6 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateRemainingTime();
     updateCurrentQuestion();
+    updateSidebarStatus();
     loadQuestions();
 
 })

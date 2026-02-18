@@ -65,7 +65,7 @@
 
         <!-- Question Container -->
         <div
-          class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden mb-6"
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden mb-6 w-full"
         >
           <!-- Question Header -->
           <div class="bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-4">
@@ -140,7 +140,7 @@
 
         <!-- Question Container -->
         <div
-          class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden mb-6"
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden mb-6 w-full"
         >
           <!-- Question Header -->
           <div class="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-5">
@@ -183,7 +183,7 @@
       <!-- Desktop Layout (lg and above) -->
       <div class="hidden lg:flex gap-6">
         <!-- Left Sidebar: Quiz Header -->
-        <div class="w-64">
+        <div class="w-64 flex-shrink-0">
           <div
             class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-5 sticky top-6"
           >
@@ -274,6 +274,55 @@
             >
               Next
             </button>
+          </div>
+        </div>
+
+        <!-- Right Sidebar: Quiz Status -->
+        <div class="w-64 flex-shrink-0">
+          <div
+            class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-5 sticky top-6"
+          >
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">
+              Quiz Status
+            </h3>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-700 dark:text-gray-300">Total</span>
+                <span
+                  class="text-xl font-bold text-blue-600 dark:text-blue-400 status-total-dom"
+                ></span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-700 dark:text-gray-300">Remaining</span>
+                <span
+                  class="text-xl font-bold text-yellow-600 dark:text-yellow-400 status-remaining-dom"
+                ></span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-700 dark:text-gray-300">Answered</span>
+                <span
+                  class="text-xl font-bold text-purple-600 dark:text-purple-400 status-answered-dom"
+                ></span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-700 dark:text-gray-300">Skipped</span>
+                <span
+                  class="text-xl font-bold text-gray-600 dark:text-gray-400 status-skipped-dom"
+                ></span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-700 dark:text-gray-300">Correct</span>
+                <span
+                  class="text-xl font-bold text-green-600 dark:text-green-400 status-correct-dom"
+                ></span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-700 dark:text-gray-300">Incorrect</span>
+                <span
+                  class="text-xl font-bold text-red-600 dark:text-red-400 status-incorrect-dom"
+                ></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
